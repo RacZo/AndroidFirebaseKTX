@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Android Firebase KTX</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="button_cause_crash">Cause Crash!</string>
+</resources>

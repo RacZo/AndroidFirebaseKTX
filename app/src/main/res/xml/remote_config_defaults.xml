@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>home_color_test</key>
+        <value>none</value>
+    </entry>
+    <entry>
+        <key>button_color_test</key>
+        <value>blue</value>
+    </entry>
+</defaultsMap>
