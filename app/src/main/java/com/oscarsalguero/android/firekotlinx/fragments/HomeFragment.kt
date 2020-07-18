@@ -12,7 +12,6 @@
 package com.oscarsalguero.android.firekotlinx.fragments
 
 
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -23,7 +22,6 @@ import androidx.core.content.ContextCompat
 import com.google.firebase.perf.metrics.AddTrace
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.oscarsalguero.android.firekotlinx.R
-import kotlinx.android.synthetic.main.fragment_dashboard.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.itemImageView
 
@@ -66,7 +64,7 @@ class HomeFragment : Fragment() {
         }
 
         val buttonVariant = FirebaseRemoteConfig.getInstance().getString("button_color_test")
-        Log.d(HomeFragment.TAG, "Valor de la variable remota button_color_test: $buttonVariant")
+        Log.d(TAG, "Valor de la variable remota button_color_test: $buttonVariant")
         when (buttonVariant) {
             "blue" -> {
                 crashButton!!.setBackgroundColor(ContextCompat.getColor(context!!, R.color.blue))

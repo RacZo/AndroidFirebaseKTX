@@ -21,7 +21,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.oscarsalguero.android.firekotlinx.R
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import kotlinx.android.synthetic.main.fragment_dashboard.*
@@ -55,7 +54,7 @@ class DashboardFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         fab!!.setOnClickListener(this)
         val buttonVariant = FirebaseRemoteConfig.getInstance().getString("button_color_test")
-        Log.d(HomeFragment.TAG, "Valor de la varible remota button_color_test: $buttonVariant")
+        Log.d(TAG, "Valor de la variable remota button_color_test: $buttonVariant")
         when (buttonVariant) {
             "blue" -> {
                 fab!!.backgroundTintList =

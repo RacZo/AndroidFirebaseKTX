@@ -32,14 +32,13 @@ class AFKApplication : MultiDexApplication() {
         // Remote Config KTX
         val remoteConfig = Firebase.remoteConfig
         val configSettings = remoteConfigSettings {
-            minimumFetchIntervalInSeconds = 30
-            fetchTimeoutInSeconds = 30
+            minimumFetchIntervalInSeconds = 3600
         }
         remoteConfig.setConfigSettingsAsync(configSettings)
         // Specify defaults
         remoteConfig.setDefaultsAsync(R.xml.remote_config_defaults)
         // Fetch variables
-        remoteConfig.fetch().addOnCompleteListener {
+        remoteConfig.fetchAndActivate().addOnCompleteListener {
             Log.d(TAG, "Remote config fetch success!")
         }
 

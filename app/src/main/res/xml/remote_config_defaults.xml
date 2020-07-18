@@ -2,10 +2,10 @@
 <defaultsMap>
     <entry>
         <key>home_color_test</key>
-        <value>red</value>
+        <value>blue</value>
     </entry>
     <entry>
         <key>button_color_test</key>
-        <value>blue</value>
+        <value>red</value>
     </entry>
 </defaultsMap>
