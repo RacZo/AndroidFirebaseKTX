@@ -12,16 +12,20 @@
 package com.oscarsalguero.android.firekotlinx.fragments
 
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import com.google.firebase.perf.metrics.AddTrace
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.oscarsalguero.android.firekotlinx.R
+import kotlinx.android.synthetic.main.fragment_dashboard.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home.itemImageView
 
 /**
  * A simple [Fragment] subclass.
@@ -50,17 +54,25 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val variant = FirebaseRemoteConfig.getInstance().getString("home_color_test")
-        Log.d(TAG, "Variant: $variant")
+        Log.d(TAG, "Valor de la variable remota home_color_test: $variant")
 
         when {
-            variant.equals("none", true) -> {
-                itemImageView!!.setBackgroundColor(resources.getColor(R.color.transparent))
-            }
             variant.equals("blue", true) -> {
-                itemImageView!!.setBackgroundColor(resources.getColor(R.color.blue))
+                itemImageView!!.setColorFilter(resources.getColor(R.color.blue))
             }
             variant.equals("red", true) -> {
-                itemImageView!!.setBackgroundColor(resources.getColor(R.color.red))
+                itemImageView!!.setColorFilter(resources.getColor(R.color.red))
+            }
+        }
+
+        val buttonVariant = FirebaseRemoteConfig.getInstance().getString("button_color_test")
+        Log.d(HomeFragment.TAG, "Valor de la variable remota button_color_test: $buttonVariant")
+        when (buttonVariant) {
+            "blue" -> {
+                crashButton!!.setBackgroundColor(ContextCompat.getColor(context!!, R.color.blue))
+            }
+            "red" -> {
+                crashButton!!.setBackgroundColor(ContextCompat.getColor(context!!, R.color.red))
             }
         }
 

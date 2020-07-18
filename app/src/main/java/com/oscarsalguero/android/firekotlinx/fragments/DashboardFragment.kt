@@ -54,10 +54,9 @@ class DashboardFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fab!!.setOnClickListener(this)
-        val variant = FirebaseRemoteConfig.getInstance()
-            .getString("button_color_test")
-        Log.d(TAG, "Variant: $variant")
-        when (variant) {
+        val buttonVariant = FirebaseRemoteConfig.getInstance().getString("button_color_test")
+        Log.d(HomeFragment.TAG, "Valor de la varible remota button_color_test: $buttonVariant")
+        when (buttonVariant) {
             "blue" -> {
                 fab!!.backgroundTintList =
                     ColorStateList.valueOf(ContextCompat.getColor(context!!, R.color.blue))

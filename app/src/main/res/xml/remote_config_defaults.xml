@@ -2,7 +2,7 @@
 <defaultsMap>
     <entry>
         <key>home_color_test</key>
-        <value>none</value>
+        <value>red</value>
     </entry>
     <entry>
         <key>button_color_test</key>
